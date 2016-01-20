@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B67B91E1C5026F700891FF7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67B91D1C5026F700891FF7 /* SettingsTableViewController.swift */; };
+		8B67B9251C50379100891FF7 /* PulsingHaloLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67B9241C50379100891FF7 /* PulsingHaloLayer.swift */; };
 		8BC5A7161C500C410025ACF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5A7151C500C410025ACF2 /* AppDelegate.swift */; };
 		8BC5A7181C500C410025ACF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5A7171C500C410025ACF2 /* ViewController.swift */; };
 		8BC5A71B1C500C410025ACF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5A7191C500C410025ACF2 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1D6F40F48E3B3CA3732ECD18 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B67B91D1C5026F700891FF7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		8B67B9241C50379100891FF7 /* PulsingHaloLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulsingHaloLayer.swift; sourceTree = "<group>"; };
 		8BC5A7121C500C410025ACF2 /* Friend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC5A7151C500C410025ACF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BC5A7171C500C410025ACF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		8BC5A7551C5017000025ACF2 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		8BC5A7561C5017000025ACF2 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		8BC5A7571C5017000025ACF2 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
-		8BC5A75C1C5019B90025ACF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8BC5A75C1C5019B90025ACF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BC5A75E1C501FC30025ACF2 /* FriendActivator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendActivator.swift; sourceTree = "<group>"; };
 		8BC5A7631C5025A50025ACF2 /* glyphicons-552-podcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-552-podcast.png"; sourceTree = "<group>"; };
 		8BC5A7651C5025C80025ACF2 /* glyphicons-137-cogwheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-137-cogwheel.png"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				8BC5A7211C500C410025ACF2 /* Info.plist */,
 				8BC5A75E1C501FC30025ACF2 /* FriendActivator.swift */,
 				8B67B91D1C5026F700891FF7 /* SettingsTableViewController.swift */,
+				8B67B9241C50379100891FF7 /* PulsingHaloLayer.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B67B91E1C5026F700891FF7 /* SettingsTableViewController.swift in Sources */,
+				8B67B9251C50379100891FF7 /* PulsingHaloLayer.swift in Sources */,
 				8BC5A75F1C501FC30025ACF2 /* FriendActivator.swift in Sources */,
 				8BC5A7181C500C410025ACF2 /* ViewController.swift in Sources */,
 				8BC5A7161C500C410025ACF2 /* AppDelegate.swift in Sources */,

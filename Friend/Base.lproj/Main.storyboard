@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,9 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hi! Let's start talking!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpK-FI-RoD">
+                                <rect key="frame" x="0.0" y="446" width="600" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="8kp-pL-rQg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="gue-3r-GVu"/>
+                                    <constraint firstAttribute="height" constant="43" id="kph-mc-OXp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kpK-FI-RoD" secondAttribute="trailing" constant="-20" id="6jV-gB-IpP"/>
+                            <constraint firstItem="kpK-FI-RoD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="GxN-FP-ulY"/>
+                            <constraint firstItem="kpK-FI-RoD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="fHb-eF-vDO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kpK-FI-RoD" secondAttribute="bottom" constant="53" id="kzD-on-MMf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kpK-FI-RoD" secondAttribute="trailing" constant="-20" id="s7O-dt-fNM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C0z-2f-tix"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="kpK-FI-RoD" id="EgS-wh-dTV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

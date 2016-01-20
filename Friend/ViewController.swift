@@ -9,10 +9,19 @@
 import UIKit
 class ViewController: UIViewController, OEEventsObserverDelegate {
 
-    var activator : FriendActivator!
+    let activator = FriendActivator()
+    let halo = PulsingHaloLayer(layerNumber: 5)
+    let activeColor = UIColor(red: 0, green: 0.455, blue: 0.756, alpha: 1)
+    let inactiveColor = UIColor.grayColor()
+    let speechColor = UIColor.greenColor()
+    var active = false
+    
+    @IBOutlet var statusLabel : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        activator = FriendActivator()
+        halo.position = self.view.center
+        self.view.layer.addSublayer(halo)
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(animated: Bool) {
@@ -30,19 +39,41 @@ class ViewController: UIViewController, OEEventsObserverDelegate {
     }
     func pocketsphinxFailedNoMicPermissions() {
         print("Failed, no mic")
+        statusLabel.text = "No mic found"
+        statusLabel.textColor = UIColor.redColor()
     }
     func audioInputDidBecomeAvailable() {
         activator.listen()
     }
     func pocketsphinxDidReceiveHypothesis(hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         if activator.isActivatingOrder(hypothesis) {
-            print("Need something?")
+            halo.color = activeColor.CGColor
+            statusLabel.textColor = activeColor
+            statusLabel.text = "Hi :) Need something?"
+            active = true
         } else if activator.isShuttingDownOrder(hypothesis) {
-            print("Bye bye..")
+            
+            statusLabel.textColor = inactiveColor
+            statusLabel.text = "Bye bye"
+            halo.color = inactiveColor.CGColor
+            active = false
         }
     }
     func pocketsphinxDidDetectSpeech() {
-        print("Speech detected")
+        halo.pulseInterval = 0.02
+        if !active {
+            halo.color = speechColor.CGColor
+            statusLabel.textColor = speechColor
+            statusLabel.text = "Listening..."
+        }
+    }
+    func pocketsphinxDidDetectFinishedSpeech() {
+        halo.pulseInterval = 0.1
+        if !active {
+            halo.color = inactiveColor.CGColor
+            statusLabel.textColor = inactiveColor
+            statusLabel.text = "Can't hear anything"
+        }
     }
 
 }
