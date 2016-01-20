@@ -12,11 +12,12 @@ class ViewController: UIViewController, OEEventsObserverDelegate {
     var activator : FriendActivator!
     override func viewDidLoad() {
         super.viewDidLoad()
-        activator = FriendActivator(delegate: self)
+        activator = FriendActivator()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        activator.bind(self)
         activator.configure()
         activator.listen()
     }
