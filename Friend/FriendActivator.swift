@@ -24,9 +24,6 @@ class FriendActivator : NSObject {
         super.init()
         self.observer.delegate = delegate
         try! OEPocketsphinxController.sharedInstance().setActive(true)
-        
-        self.configure()
-        
     }
     func isOrderMade(order : String) -> Bool {
         return order == self.order
