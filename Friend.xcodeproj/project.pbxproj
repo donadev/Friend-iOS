@@ -14,6 +14,11 @@
 		8BC5A7201C500C410025ACF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5A71E1C500C410025ACF2 /* LaunchScreen.storyboard */; };
 		8BC5A72B1C500C410025ACF2 /* FriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5A72A1C500C410025ACF2 /* FriendTests.swift */; };
 		8BC5A7361C500C410025ACF2 /* FriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5A7351C500C410025ACF2 /* FriendUITests.swift */; };
+		8BC5A7581C5017000025ACF2 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5A7541C5017000025ACF2 /* AcousticModelEnglish.bundle */; };
+		8BC5A7591C5017000025ACF2 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5A7551C5017000025ACF2 /* AcousticModelSpanish.bundle */; };
+		8BC5A75A1C5017000025ACF2 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC5A7561C5017000025ACF2 /* OpenEars.framework */; };
+		8BC5A75B1C5017000025ACF2 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC5A7571C5017000025ACF2 /* Slt.framework */; };
+		8BC5A75D1C5019B90025ACF2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5A75C1C5019B90025ACF2 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		8BC5A7311C500C410025ACF2 /* FriendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC5A7351C500C410025ACF2 /* FriendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendUITests.swift; sourceTree = "<group>"; };
 		8BC5A7371C500C410025ACF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BC5A74B1C500D240025ACF2 /* Friend-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Friend-Bridging-Header.h"; sourceTree = "<group>"; };
+		8BC5A7541C5017000025ACF2 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		8BC5A7551C5017000025ACF2 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		8BC5A7561C5017000025ACF2 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		8BC5A7571C5017000025ACF2 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		8BC5A75C1C5019B90025ACF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC5A75B1C5017000025ACF2 /* Slt.framework in Frameworks */,
+				8BC5A75A1C5017000025ACF2 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +90,13 @@
 		8BC5A7091C500C410025ACF2 = {
 			isa = PBXGroup;
 			children = (
+				8BC5A75C1C5019B90025ACF2 /* Podfile */,
+				8BC5A7531C5017000025ACF2 /* Framework */,
 				8BC5A7141C500C410025ACF2 /* Friend */,
 				8BC5A7291C500C410025ACF2 /* FriendTests */,
 				8BC5A7341C500C410025ACF2 /* FriendUITests */,
 				8BC5A7131C500C410025ACF2 /* Products */,
+				8BC5A74B1C500D240025ACF2 /* Friend-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +139,17 @@
 				8BC5A7371C500C410025ACF2 /* Info.plist */,
 			);
 			path = FriendUITests;
+			sourceTree = "<group>";
+		};
+		8BC5A7531C5017000025ACF2 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				8BC5A7541C5017000025ACF2 /* AcousticModelEnglish.bundle */,
+				8BC5A7551C5017000025ACF2 /* AcousticModelSpanish.bundle */,
+				8BC5A7561C5017000025ACF2 /* OpenEars.framework */,
+				8BC5A7571C5017000025ACF2 /* Slt.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +256,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC5A75D1C5019B90025ACF2 /* Podfile in Resources */,
 				8BC5A7201C500C410025ACF2 /* LaunchScreen.storyboard in Resources */,
+				8BC5A7591C5017000025ACF2 /* AcousticModelSpanish.bundle in Resources */,
+				8BC5A7581C5017000025ACF2 /* AcousticModelEnglish.bundle in Resources */,
 				8BC5A71D1C500C410025ACF2 /* Assets.xcassets in Resources */,
 				8BC5A71B1C500C410025ACF2 /* Main.storyboard in Resources */,
 			);
@@ -399,10 +429,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Friend",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = Friend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = donadev.Friend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Friend-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -410,10 +449,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Friend",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = Friend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = donadev.Friend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Friend-Bridging-Header.h";
 			};
 			name = Release;
 		};
