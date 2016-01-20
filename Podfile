@@ -1,1 +1,1 @@
-pod "PulsingHalo"
+pod "AFNetworking"
