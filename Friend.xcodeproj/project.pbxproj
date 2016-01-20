@@ -19,6 +19,7 @@
 		8BC5A75A1C5017000025ACF2 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC5A7561C5017000025ACF2 /* OpenEars.framework */; };
 		8BC5A75B1C5017000025ACF2 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC5A7571C5017000025ACF2 /* Slt.framework */; };
 		8BC5A75D1C5019B90025ACF2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5A75C1C5019B90025ACF2 /* Podfile */; };
+		8BC5A75F1C501FC30025ACF2 /* FriendActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5A75E1C501FC30025ACF2 /* FriendActivator.swift */; };
 		BC884C68793931C19E7E8D78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6F40F48E3B3CA3732ECD18 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		8BC5A7561C5017000025ACF2 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		8BC5A7571C5017000025ACF2 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		8BC5A75C1C5019B90025ACF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8BC5A75E1C501FC30025ACF2 /* FriendActivator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendActivator.swift; sourceTree = "<group>"; };
 		B186070D19FE8F3A55C98543 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D85C728E9376E02A4CF356E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				8BC5A71C1C500C410025ACF2 /* Assets.xcassets */,
 				8BC5A71E1C500C410025ACF2 /* LaunchScreen.storyboard */,
 				8BC5A7211C500C410025ACF2 /* Info.plist */,
+				8BC5A75E1C501FC30025ACF2 /* FriendActivator.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC5A75F1C501FC30025ACF2 /* FriendActivator.swift in Sources */,
 				8BC5A7181C500C410025ACF2 /* ViewController.swift in Sources */,
 				8BC5A7161C500C410025ACF2 /* AppDelegate.swift in Sources */,
 			);
