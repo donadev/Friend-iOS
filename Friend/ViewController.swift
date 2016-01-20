@@ -13,9 +13,15 @@ class ViewController: UIViewController, OEEventsObserverDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         activator = FriendActivator(delegate: self)
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         activator.configure()
         activator.listen()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewDidDisappear(animated: Bool) {
+        activator.shuwdown()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

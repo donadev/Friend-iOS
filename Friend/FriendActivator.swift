@@ -30,9 +30,14 @@ class FriendActivator : NSObject {
     }
     func configure() {
         let languagePath = OEAcousticModel.pathToModel(languageSet)
-        let error = generator.generateLanguageModelFromArray([order], withFilesNamed: modelName, forAcousticModelAtPath: languagePath)
-        if let problem = error {
-            print("Error: \(problem)")
+        if let error = generator.generateLanguageModelFromArray([order], withFilesNamed: modelName, forAcousticModelAtPath: languagePath) {
+            print("Error: \(error)")
+        }
+    }
+    func shuwdown() {
+        let controller = OEPocketsphinxController.sharedInstance()
+        if let error = controller.stopListening() {
+            print("Problem with shutting down listener : \(error)")
         }
     }
     func listen() {
