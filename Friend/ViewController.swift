@@ -48,28 +48,33 @@ class ViewController: UIViewController, OEEventsObserverDelegate {
     func pocketsphinxDidReceiveHypothesis(hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
         if activator.isActivatingOrder(hypothesis) {
             halo.color = activeColor.CGColor
+            halo.radius = 140
+            halo.animationDuration = 0.9
             statusLabel.textColor = activeColor
             statusLabel.text = "Hi :) Need something?"
             active = true
         } else if activator.isShuttingDownOrder(hypothesis) {
-            
+            halo.radius = 60
             statusLabel.textColor = inactiveColor
             statusLabel.text = "Bye bye"
+            halo.animationDuration = 1.5
             halo.color = inactiveColor.CGColor
             active = false
         }
     }
     func pocketsphinxDidDetectSpeech() {
-        halo.pulseInterval = 0.02
+        halo.animationDuration = 1
         if !active {
+            halo.radius = 100
             halo.color = speechColor.CGColor
             statusLabel.textColor = speechColor
             statusLabel.text = "Listening..."
         }
     }
     func pocketsphinxDidDetectFinishedSpeech() {
-        halo.pulseInterval = 0.1
+        halo.animationDuration = 1.5
         if !active {
+            halo.radius = 60
             halo.color = inactiveColor.CGColor
             statusLabel.textColor = inactiveColor
             statusLabel.text = "Can't hear anything"

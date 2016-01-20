@@ -20,7 +20,7 @@ class PulsingHaloLayer : CAReplicatorLayer {
     var fromValueForRadius : CGFloat!
     var fromValueForAlpha : CGFloat!
     var keyTimeForHalfOpacity : CGFloat!
-    var animationDuration : NSTimeInterval = 1 {
+    var animationDuration : NSTimeInterval = 1.5 {
         didSet {
             self.animationGroup.duration = animationDuration + self.pulseInterval;
             for animation : CAAnimation in self.animationGroup.animations! {
