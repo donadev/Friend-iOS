@@ -36,18 +36,23 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("settingsCell", forIndexPath: indexPath)
-        
-        cell.textLabel?.text = "Activation sentence"
-        cell.detailTextLabel?.text = FriendActivator.getOrder()
+        if indexPath.row == 0 {
+            cell.textLabel?.text = "Activation sentence"
+            cell.detailTextLabel?.text = FriendActivator.getOrder(true)
+        } else {
+            cell.textLabel?.text = "Deactivation sentence"
+            cell.detailTextLabel?.text = FriendActivator.getOrder(false)
+        }
 
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let activating = (indexPath.row == 0)
         let alert = UIAlertController(title: "Change activation sentence", message: "Change it to something speakable.", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
             textField.placeholder = "Sentence here.."
@@ -55,7 +60,7 @@ class SettingsTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Change", style: .Default, handler: { (action : UIAlertAction) -> Void in
             alert.dismissViewControllerAnimated(true, completion: nil)
             let field  : UITextField = (alert.textFields?.first!)!
-            FriendActivator.changeOrder(field.text!)
+            FriendActivator.changeOrder(field.text!, activating: activating)
             self.tableView.reloadData()
             
         }))

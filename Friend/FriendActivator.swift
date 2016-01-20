@@ -12,9 +12,10 @@ class FriendActivator {
     private let modelName = "friendActivatorModel"
     private let languageSet = "AcousticModelEnglish"
     
-    private static let defaultOrder = "HEY FRIEND"
-    private static let orderKey = "FRIEND_ORDER"
-    
+    private static let defaultActivatingOrder = "NEED YOUR HELP"
+    private static let defaultDeactivatingOrder = "NOT ANYMORE"
+    private static let ACTIVATE_ORDER_KEY = "FRIEND_ON_ORDER"
+    private static let DEACTIVATE_ORDER_KEY = "FRIEND_OFF_ORDER"
     private static let sharedInstance = FriendActivator()
     private var languageModelPath : String!
     private var languageDictPath : String!
@@ -22,37 +23,49 @@ class FriendActivator {
     let generator = OELanguageModelGenerator()
     let observer = OEEventsObserver()
     
-    class func getOrder() -> String {
+    class func getOrderKey(activating : Bool) -> String {
+        return activating ? ACTIVATE_ORDER_KEY : DEACTIVATE_ORDER_KEY
+    }
+    class func getDefaultOrder(activating : Bool) -> String {
+        return activating ? defaultActivatingOrder : defaultDeactivatingOrder
+    }
+    class func getOrder(activating : Bool) -> String {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let order = userDefaults.stringForKey(orderKey) {
+        let key = getOrderKey(activating)
+        if let order = userDefaults.stringForKey(key) {
             return order
         }
-        return defaultOrder
+        return getDefaultOrder(activating)
     }
-    class func changeOrder(order : String) {
+    class func changeOrder(order : String, activating : Bool) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        let orderKey = getOrderKey(activating)
         userDefaults.setValue(order, forKey: orderKey)
         userDefaults.synchronize()
         sharedInstance.shuwdown()
-        sharedInstance.configure(order)
+        sharedInstance.configure()
         sharedInstance.listen()
     }
-    func isOrderMade(order : String) -> Bool {
-        return order == FriendActivator.getOrder()
+    func isActivatingOrder(order : String) -> Bool {
+        return order == FriendActivator.getOrder(true)
+    }
+    func isShuttingDownOrder(order : String) -> Bool {
+        return order == FriendActivator.getOrder(false)
     }
     func bind(delegate : OEEventsObserverDelegate) {
         self.observer.delegate = delegate
         try! OEPocketsphinxController.sharedInstance().setActive(true)
     }
-    func configure(order : String) {
+    func configure(inOrder : String, outOrder : String) {
         let languagePath = OEAcousticModel.pathToModel(languageSet)
-        if let error = generator.generateLanguageModelFromArray([order], withFilesNamed: modelName, forAcousticModelAtPath: languagePath) {
+        if let error = generator.generateLanguageModelFromArray([inOrder, outOrder], withFilesNamed: modelName, forAcousticModelAtPath: languagePath) {
             print("Error: \(error)")
         }
     }
     func configure() {
-        let order = FriendActivator.getOrder()
-        configure(order)
+        let inOrder = FriendActivator.getOrder(true)
+        let outOrder = FriendActivator.getOrder(false)
+        configure(inOrder, outOrder: outOrder)
     }
     func shuwdown() {
         let controller = OEPocketsphinxController.sharedInstance()

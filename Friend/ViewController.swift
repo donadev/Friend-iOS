@@ -35,8 +35,10 @@ class ViewController: UIViewController, OEEventsObserverDelegate {
         activator.listen()
     }
     func pocketsphinxDidReceiveHypothesis(hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
-        if activator.isOrderMade(hypothesis) {
-            print("matched!")
+        if activator.isActivatingOrder(hypothesis) {
+            print("Need something?")
+        } else if activator.isShuttingDownOrder(hypothesis) {
+            print("Bye bye..")
         }
     }
     func pocketsphinxDidDetectSpeech() {
